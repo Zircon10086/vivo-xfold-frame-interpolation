@@ -41,20 +41,29 @@ CHIP=""
 
 classify() {
   case "$1" in
-    PD2266|V2266*) TIER=verified; NAME="X Fold2";        CHIP="V2";   return 0 ;;
-    PD2337|V2337*) TIER=warn;     NAME="X Fold3 Pro";    CHIP="V3";   return 0 ;;
-    PD2507|V2545*) TIER=warn;     NAME="X Fold6";        CHIP="V3+";  return 0 ;;
-    PD2178)        TIER=nochip;   NAME="X Fold";         CHIP="无";   return 0 ;;
-    PD2229)        TIER=nochip;   NAME="X Fold+";        CHIP="无";   return 0 ;;
-    PD2329|PD2307) TIER=nochip;   NAME="X Fold3";        CHIP="无";   return 0 ;;
-    PD2436|PD2437) TIER=nochip;   NAME="X Fold5";        CHIP="无";   return 0 ;;
+    # 型号（V 编号）优先：来自官方规格页，比设备代号可靠
+    V2266*) TIER=verified; NAME="X Fold2";     CHIP="V2";  return 0 ;;
+    V2337*) TIER=warn;     NAME="X Fold3 Pro"; CHIP="V3";  return 0 ;;
+    V2545*) TIER=warn;     NAME="X Fold6";     CHIP="V3+"; return 0 ;;
+    V2436*) TIER=nochip;   NAME="X Fold5";     CHIP="无";  return 0 ;;
+    V2303*) TIER=nochip;   NAME="X Fold3";     CHIP="无";  return 0 ;;
+    V2229*) TIER=nochip;   NAME="X Fold+";     CHIP="无";  return 0 ;;
+    V2178*) TIER=nochip;   NAME="X Fold";      CHIP="无";  return 0 ;;
+    # 设备代号（PD 编号）兜底
+    PD2266) TIER=verified; NAME="X Fold2";     CHIP="V2";  return 0 ;;
+    PD2337) TIER=warn;     NAME="X Fold3 Pro"; CHIP="V3";  return 0 ;;
+    PD2507) TIER=warn;     NAME="X Fold6";     CHIP="V3+"; return 0 ;;
+    PD2436) TIER=nochip;   NAME="X Fold5";     CHIP="无";  return 0 ;;
+    PD2303) TIER=nochip;   NAME="X Fold3";     CHIP="无";  return 0 ;;
+    PD2229) TIER=nochip;   NAME="X Fold+";     CHIP="无";  return 0 ;;
+    PD2178) TIER=nochip;   NAME="X Fold";      CHIP="无";  return 0 ;;
   esac
   return 1
 }
 
-if ! classify "$DEV_NORM"; then
-  # 设备代号没命中时，再用型号号段兜底（V<年份><批号><A>）
-  if ! classify "$MODEL_NORM"; then
+if ! classify "$MODEL_NORM"; then
+  # 型号没命中时，用设备代号兜底
+  if ! classify "$DEV_NORM"; then
     if echo "$MODEL_NORM$DEV_NORM" | grep -qi 'FOLD'; then
       TIER=unknown_fold; NAME="未识别的 X Fold 机型"; CHIP="未知"
     else
@@ -62,13 +71,6 @@ if ! classify "$DEV_NORM"; then
     fi
   fi
 fi
-
-# 型号号段兜底：V2266A / V2337A / V2545A 的首段与 PD 号对应
-case "$MODEL_NORM" in
-  V2266*) TIER=verified; NAME="X Fold2";     CHIP="V2" ;;
-  V2337*) TIER=warn;     NAME="X Fold3 Pro"; CHIP="V3" ;;
-  V2545*) TIER=warn;     NAME="X Fold6";     CHIP="V3+" ;;
-esac
 
 if [ -f /data/local/tmp/vivo-xfold-force ]; then
   if [ "$TIER" != "verified" ]; then

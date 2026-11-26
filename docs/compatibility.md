@@ -2,18 +2,18 @@
 
 ## 机型
 
-| 机型 | 影像芯片 | 模块支持 | 说明 |
-|---|---|---|---|
-| vivo X Fold2（PD2266 / V2266A） | V2 | ✅ 实测 | OriginOS 6 / Android 16，`PD2266_A_16.3.18.1.W10.V000L1` |
-| vivo X Fold3 Pro（PD2337 / V2337A） | V3 | ⚠️ 理论 | 未验证；安装时警告 |
-| vivo X Fold6（PD2507 / V2545A） | V3+ | ⚠️ 理论 | 未验证；安装时警告 |
-| vivo X Fold5（PD2436） | 无 | ⛔ 拒绝 | 无独立 V 芯片 |
-| vivo X Fold3（PD2329） | 无 | ⛔ 拒绝 | 无独立 V 芯片 |
-| vivo X Fold+（PD2229） | 无 | ⛔ 拒绝 | 无独立 V 芯片 |
-| vivo X Fold（PD2178） | 无 | ⛔ 拒绝 | 无独立 V 芯片 |
-| vivo X100 / X90 等直板机 | 有 | ⛔ 不需要 | 出厂即开放游戏插帧 |
+| 机型 | 设备型号 | 影像芯片 | 模块支持 | 说明 |
+|---|---|---|---|---|
+| vivo X Fold2 | V2266A（PD2266） | V2 | ✅ 实测 | OriginOS 6 / Android 16，`PD2266_A_16.3.18.1.W10.V000L1` |
+| vivo X Fold3 Pro | V2337A（PD2337） | V3 | ⚠️ 理论 | 未验证；安装时警告 |
+| vivo X Fold6 | V2545A（PD2507） | V3+ | ⚠️ 理论 | 未验证；安装时警告 |
+| vivo X Fold5 | V2436A（PD2436） | 无 | ⛔ 拒绝 | 无独立 V 芯片 |
+| vivo X Fold3 | V2303A（PD2303） | 无 | ⛔ 拒绝 | 无独立 V 芯片 |
+| vivo X Fold+ | V2229A（PD2229） | 无 | ⛔ 拒绝 | 无独立 V 芯片 |
+| vivo X Fold | V2178A（PD2178） | 无 | ⛔ 拒绝 | 无独立 V 芯片 |
+| vivo X100 / X90 等直板机 | — | 有 | ⛔ 不需要 | 出厂即开放游戏插帧 |
 
-检测由 `module/customize.sh` 在安装时执行，读 `ro.product.vendor.device` / `ro.product.vendor.model`：
+检测由 `module/customize.sh` 在安装时执行：优先读 `ro.product.vendor.model`（V 编号，官方规格页口径），再用 `ro.product.vendor.device`（PD 代号）兜底：
 命中白名单的 X Fold2 直接通过；X Fold3 Pro / X Fold6 警告后继续；其余机型 `abort`。
 白名单外但名字带 fold 的未知机型同样拒绝，避免把不支持的机型写坏。
 

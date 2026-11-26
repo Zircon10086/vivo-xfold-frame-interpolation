@@ -12,6 +12,7 @@
 | [phase-6.md](phase-6.md) | 属性声明路线：`vivo.hardware.game.memc` |
 | [phase-7.md](phase-7.md) | 60→120 全链路验证（含 6/7 参 payload） |
 | [phase-8.md](phase-8.md) | KernelSU WebUI：设计、踩坑、三档面板、版本演进 |
+| [phase-9.md](phase-9.md) | 开源化、WebUI 动效与返回键、模块 id 重命名、安装时机型检测 |
 
 证据截图在 [evidence/](evidence/)。
 
