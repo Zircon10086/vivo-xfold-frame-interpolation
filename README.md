@@ -141,10 +141,10 @@ dist/              构建产物
 
 ---
 
-## 构建
+## 构建与自测
 
 ```bash
-./scripts/build-module.sh          # 产物：dist/vivo-xfold-frame-interpolation-v<version>.zip
+./scripts/build-module.sh          # 本地打包（产物在 dist/）
 ./scripts/test-customize.sh        # 用环境变量模拟各机型，验证安装检测分支
 ```
 
@@ -153,11 +153,33 @@ WebUI 是纯静态文件，改完直接重新部署即可（不需要编译）�
 ### 发布流程
 
 ```bash
-git tag v1.7.2 && git push origin v1.7.2
+git tag v1.7.3 && git push origin v1.7.3
 ```
 
-推 tag 会触发 `.github/workflows/release.yml`：跑安装检测自测 → 打包 zip → 上传 workflow artifact → 自动创建 Release 并附上 zip。
-普通 push 与 PR 只跑构建与自测，不发 Release。
+推 tag 会触发 `.github/workflows/release.yml`：
+
+1. 运行安装检测自测
+2. 用 [`KernelSU-Modules/tools/actions/module-release`](https://github.com/KernelSU-Modules/tools/tree/main/actions/module-release) 的官方校验器预检 ZIP 与 `module.prop`
+3. 按 draft → 上传 → 发布 的顺序创建 **immutable release**，资源名 `{id}-{versionCode}-{version}.zip`
+
+普通 push / PR 只做 `dry-run` 校验，不发 Release。
+
+> 仓库已启用 **Settings → General → Releases → Enable release immutability**。
+> 不可变 release 发布后资源与 tag 都会被冻结，出问题只能发一个 `versionCode` 更高的新版本。
+
+### KernelSU Modules 收录
+
+| 项 | 值 |
+|---|---|
+| 模块 ID | `vivo-xfold-frame-interpolation` |
+| 展示元数据 | [module.yaml](module.yaml) |
+| 商店描述 | [docs/store/description.md](docs/store/description.md) |
+| 图标 | [assets/icon.png](assets/icon.png) |
+| 收录状态 | 待提交（需在浏览器里安装 GitHub App 并在 [KernelSU 开发者门户](https://developers.kernelsu.org) 提交） |
+
+上架后 KernelSU Manager 的更新地址为
+`https://modules.kernelsu.org/api/v1/modules/vivo-xfold-frame-interpolation/update.json`，
+届时会写入 `module.prop` 的 `updateJson`。
 
 ## 安装时检测
 
