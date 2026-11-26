@@ -150,6 +150,15 @@ dist/              构建产物
 
 WebUI 是纯静态文件，改完直接重新部署即可（不需要编译）。
 
+### 发布流程
+
+```bash
+git tag v1.7.2 && git push origin v1.7.2
+```
+
+推 tag 会触发 `.github/workflows/release.yml`：跑安装检测自测 → 打包 zip → 上传 workflow artifact → 自动创建 Release 并附上 zip。
+普通 push 与 PR 只跑构建与自测，不发 Release。
+
 ## 安装时检测
 
 `module/customize.sh` 在 KernelSU 安装阶段执行（`ksud module install` 或管理器里选 zip 都会跑），
