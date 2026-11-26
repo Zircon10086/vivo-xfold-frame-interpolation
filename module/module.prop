@@ -1,6 +1,6 @@
-id=vivo-game-memc
+id=vivo-xfold-frame-interpolation
 name=vivo X Fold 插帧解锁
-version=v1.6.0
-versionCode=7
+version=v1.7.0
+versionCode=8
 author=ZiRCON
-description=仅面向 vivo X Fold 系列（X Fold2 实测通过）：开机后声明 [vivo.hardware.game.memc] 能力，导入任意已安装应用即可在游戏侧栏获得「原始帧率 / 提升帧率(60→120) / 优化功耗(30→60)」三档。开源 AGPL-3.0：vivo-xfold-frame-interpolation。
+description=仅面向带 V 系列影像芯片的 vivo X Fold（X Fold2 实测通过；X Fold3 Pro / X Fold6 理论支持）。安装时自动检测机型：无芯片机型与非 X Fold 拒绝安装。开机后声明 [vivo.hardware.game.memc]，导入应用即可在游戏侧栏获得「原始帧率 / 提升帧率(60→120) / 优化功耗(30→60)」。AGPL-3.0。

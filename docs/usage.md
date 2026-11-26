@@ -15,7 +15,7 @@ KernelSU 管理器 → 模块 → 本模块卡片 → 左下角按钮。
 
 ### 进入页面时会自动清理
 
-每次打开 WebUI 会删除游戏魔盒里「本机没安装」的预置游戏行（备份在 `/data/local/tmp/vivo-memc-backup/`）。
+每次打开 WebUI 会删除游戏魔盒里「本机没安装」的预置游戏行（备份在 `/data/local/tmp/vivo-xfold-backup/`）。
 这一步是为了让列表只反映真实可用的应用。若 `pm list packages` 结果少于 50 条（异常环境），清理会中止。
 
 ## 导入 / 移除

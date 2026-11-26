@@ -21,9 +21,9 @@ set -u
 MODDIR=${0%/*}
 MODDIR=${MODDIR%/bin}
 DB=/data/data/com.vivo.gamecube/databases/support_dimension_list.db
-LOG=/data/local/tmp/vivo-game-memc.log
+LOG=/data/local/tmp/vivo-xfold-fi.log
 GC=com.vivo.gamecube
-BACKUP_DIR=/data/local/tmp/vivo-memc-backup
+BACKUP_DIR=/data/local/tmp/vivo-xfold-backup
 
 MANAGED="'boost_frame','optimize_power','optimize_power_v3_60_30_60','optimize_power_v3_90_45_90','optimize_power_v3_120_60_120','super_resolution','screen_light_effect','back_light_effect','boost_frame_v3_30_60','boost_frame_v3_60_120','boost_frame_v3_60_45_90','boost_frame_v3_60_48_144'"
 

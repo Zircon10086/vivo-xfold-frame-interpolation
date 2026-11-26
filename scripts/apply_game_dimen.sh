@@ -11,7 +11,7 @@
 #      与 boost_frame_v3_60_48_144（会把目标帧算成 144，本机面板只有 120）
 #   4) 确保 boost_frame_v3_60_120 存在
 #
-# 前提：/sys/rsc/vgarph/MEMC 已是 1（能力位由 vivo-game-memc 模块声明）。
+# 前提：/sys/rsc/vgarph/MEMC 已是 1（能力位由 vivo-xfold-frame-interpolation 模块声明）。
 set -e
 
 PKG="${1:-com.miHoYo.Nap}"

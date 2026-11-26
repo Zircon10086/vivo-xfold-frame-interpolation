@@ -11,20 +11,22 @@
 
 ## 安装步骤
 
-1. 从 Releases 或 `dist/` 取得 `vivo-game-memc-vX.Y.Z.zip`。
+1. 从 Releases 或 `dist/` 取得 `vivo-xfold-frame-interpolation-vX.Y.Z.zip`。
 2. 打开 KernelSU 管理器 → 底部「模块」→ 右上角「安装」→ 选择 zip。
+   安装时会先跑 `customize.sh` 做机型检测：X Fold2 直接通过；X Fold3 Pro / X Fold6 会提示「理论支持、未验证」后继续；
+   其他机型（含无 V 芯片的 X Fold）会**中止安装**并说明原因。
 3. 安装完成后**重启**。
 4. 开机 30 秒左右会再重启一次 zygote（屏幕可能闪黑/重绘一次），这是模块在重启配置 HAL 与 zygote，属预期行为。
 5. 回到模块列表，本模块卡片左下角会出现入口按钮，点它打开 WebUI。
 
 > 如果卡片上没有入口按钮：检查模块目录的 SELinux 上下文，手工放模块时需要
-> `chcon -R u:object_r:system_file:s0 /data/adb/modules/vivo-game-memc`
+> `chcon -R u:object_r:system_file:s0 /data/adb/modules/vivo-xfold-frame-interpolation`
 > （用管理器刷 zip 安装会自动处理）。
 
 ## 开机日志
 
 ```
-/data/local/tmp/vivo-game-memc.log
+/data/local/tmp/vivo-xfold-fi.log
 ```
 
 正常应包含：等待 `sys.boot_completed` → `chcon` → `bind mount vivo_config.ini` → `restart vivo-configstore-hal-1-0` → `restart zygote`。

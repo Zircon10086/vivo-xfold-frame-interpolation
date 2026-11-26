@@ -16,8 +16,38 @@ vivo 的 X Fold 折叠屏机型在系统里保留了显示芯片的插帧（MEMC
 
 ## 适用范围
 
-| 机型 | 情况 |
+本模块**只对带独立 V 系列影像芯片的 X Fold 机型**有意义：图像插值（MEMC）走的就是这颗协处理器的通路，
+没有它的机型硬件层面就不存在插帧能力。安装时 `customize.sh` 会自动检测并拦截。
+
+| 机型 | 发布 | 主 SoC | 影像芯片 | 模块支持 |
+|---|---|---|---|---|
+| vivo X Fold6 | 2026-06 | 天玑 9500 超能版（3nm） | **V3+** | ⚠️ 理论支持，未验证（安装时警告）|
+| vivo X Fold5 | 2025-06 | 骁龙 8 Gen 3（4nm） | 无独立 V 芯片 | ⛔ 拒绝安装 |
+| vivo X Fold3 Pro | 2024-03 | 骁龙 8 Gen 3（4nm） | **V3** | ⚠️ 理论支持，未验证（安装时警告）|
+| vivo X Fold3 | 2024-03 | 骁龙 8 Gen 2（4nm） | 无独立 V 芯片 | ⛔ 拒绝安装 |
+| **vivo X Fold2** | 2023-04 | 骁龙 8 Gen 2（4nm） | **V2** | ✅ 实测通过（本机 PD2266 / V2266A）|
+| vivo X Fold+ | 2022-09 | 骁龙 8+ Gen 1（4nm） | 无独立 V 芯片 | ⛔ 拒绝安装 |
+| vivo X Fold | 2022-04 | 骁龙 8 Gen 1（4nm） | 无独立 V 芯片 | ⛔ 拒绝安装 |
+| vivo X100 等直板机 | — | — | 有 V 芯片，但系统未限制 | ⛔ 不需要：出厂即开放游戏插帧 |
+
+**为什么要拦掉没有 V 芯片的机型？**
+X Fold5 / X Fold3 / X Fold+ / X Fold 这一代没有独立影像芯片，插帧能力由主 SoC 或软件路径承担，
+本模块写入的 `game_dimen` 行与 `vivo_config.ini` 声明在这些机型上既不会出现侧栏入口，也可能触发
+GameCube 的异常状态，所以直接拒绝，避免用户白折腾。
+
+**检测逻辑**（`module/customize.sh`，安装时由 KernelSU 执行）：
+
+| 检测结果 | 行为 |
 |---|---|
+| X Fold2（PD2266 / V2266A） | 通过，提示「唯一完整验证过的机型」|
+| X Fold3 Pro（PD2337 / V2337A）、X Fold6（PD2507 / V2545A） | **警告后继续安装**（理论支持）|
+| 其他 X Fold（PD2178 / PD2229 / PD2329 / PD2436 等） | **中止安装**，提示该机型无独立 V 芯片 |
+| 非 X Fold 机型 | **中止安装**，提示直板机原生开放插帧 |
+| 未知 X Fold 机型（名字里带 fold 但不在白名单） | **中止安装**，提示确认机型 |
+
+调试逃生门：设备上存在 `/data/local/tmp/vivo-xfold-force` 时，任何机型都会带警告放行（自担风险）。
+
+---|---|
 | vivo X Fold2 | ✅ 实测通过（本项目全部证据来自该机型） |
 | vivo X Fold / X Fold+ / X Fold3 / X Fold3 Pro / X Fold5 | ⚠️ 理论适用，未验证：依赖 `vivo.hardware.game.memc` 属性与 `com.vivo.gamecube` 的数据库结构是否同构 |
 | vivo X100 等直板机 | ⛔ 不需要：出厂即开放游戏插帧，用系统自带开关即可 |
@@ -56,7 +86,7 @@ KernelSU 模块（开机后，等 sys.boot_completed + 15s）
 
 安装：
 
-1. 从 Releases 下载 `vivo-game-memc-vX.Y.Z.zip`，或本地运行 `scripts/build-module.sh` 自行打包（产物在 `dist/`）
+1. 从 Releases 下载 `vivo-xfold-frame-interpolation-vX.Y.Z.zip`，或本地运行 `scripts/build-module.sh` 自行打包（产物在 `dist/`）
 2. KernelSU 管理器 → 模块 → 从本地安装 → 选择 zip
 3. 重启手机。**开机会多一次 zygote 重启，约 30 秒**，属正常现象
 4. 进入 KernelSU 模块列表，点本模块卡片左下角的按钮打开 WebUI
@@ -110,19 +140,36 @@ dist/              构建产物
 ## 构建
 
 ```bash
-cd module && zip -r ../dist/vivo-game-memc-v1.6.0.zip . -x '*.DS_Store'
-# 或使用脚本
-./scripts/build-module.sh
+./scripts/build-module.sh          # 产物：dist/vivo-xfold-frame-interpolation-v<version>.zip
+./scripts/test-customize.sh        # 用环境变量模拟各机型，验证安装检测分支
 ```
 
 WebUI 是纯静态文件，改完直接重新部署即可（不需要编译）。
+
+## 安装时检测
+
+`module/customize.sh` 在 KernelSU 安装阶段执行（`ksud module install` 或管理器里选 zip 都会跑），
+通过 `ro.product.vendor.device` / `ro.product.vendor.model` 判断机型与影像芯片，输出：
+
+```
+----------------------------------------------------------------
+ vivo X Fold 插帧解锁 · 安装前设备检测
+ 型号: V2266A
+ 设备: PD2266
+ 市场名: 未知
+----------------------------------------------------------------
+√ 检测到 X Fold2（影像芯片 V2），这是本模块唯一完整验证过的机型
+----------------------------------------------------------------
+```
+
+规则见上方「适用范围」表格。临时绕过：`touch /data/local/tmp/vivo-xfold-force` 后重装。
 
 ---
 
 ## 风险与免责
 
 - 本模块修改的是**游戏魔盒的配置数据库**与 `vivo_config.ini` 的挂载，属于系统级改动。刷入前请确认你能接受「开不了机就重刷系统包」的风险。
-- 写数据库前会自动备份到 `/data/local/tmp/vivo-memc-backup/`；但「恢复游戏魔盒初始设置」会清空游戏魔盒数据，操作前请确认。
+- 写数据库前会自动备份到 `/data/local/tmp/vivo-xfold-backup/`；但「恢复游戏魔盒初始设置」会清空游戏魔盒数据，操作前请确认。
 - 不要在 `post-fs-data.sh` 里挂 `/vendor`：本机实测会导致 init SIGABRT、卡开机 logo（这也是本项目早期的一个坑）。
 - 仅供个人学习与自用，请遵守你所在地区的法律与厂商条款。因使用本模块造成的数据丢失、保修失效等问题由使用者自行承担。
 

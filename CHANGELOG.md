@@ -1,5 +1,16 @@
 # 更新日志
 
+## v1.7.0
+
+- **模块 id 改为 `vivo-xfold-frame-interpolation`**（开发期不保留旧 id；日志、备份目录、WebUI 路径同步更新）
+- 新增 `customize.sh`：安装时按机型与影像芯片检测
+  - X Fold2：通过（唯一已验证）
+  - X Fold3 Pro / X Fold6：警告后继续（带 V3 / V3+，理论支持）
+  - 无 V 芯片的 X Fold（Fold5 / Fold3 / Fold+ / Fold）：中止安装
+  - 非 X Fold 机型、未知折叠机型：中止安装
+  - 调试逃生门：`/data/local/tmp/vivo-xfold-force`
+- README / 兼容性文档补充历代 X Fold 的芯片对照表与拦截理由
+
 ## v1.6.0
 
 - 开源整理：仓库结构重排（`module/`、`docs/`、`scripts/`、`legacy/`），补 README、安装/使用/原理/兼容性/FAQ 文档，协议改为 AGPL-3.0

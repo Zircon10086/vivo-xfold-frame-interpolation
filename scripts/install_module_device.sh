@@ -1,8 +1,8 @@
 #!/system/bin/sh
 # 设备端安装脚本：把 /data/local/tmp 下的模块搬到 /data/adb/modules
 set -e
-SRC=/data/local/tmp/vivo-game-memc
-DST=/data/adb/modules/vivo-game-memc
+SRC=/data/local/tmp/vivo-xfold-frame-interpolation
+DST=/data/adb/modules/vivo-xfold-frame-interpolation
 
 [ -f "$SRC/module.prop" ] || { echo "missing module.prop in $SRC"; exit 1; }
 rm -rf "$DST"

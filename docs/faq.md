@@ -1,5 +1,14 @@
 # FAQ
 
+**Q：安装时提示「该机型没有独立 V 系列影像芯片，安装中止」？**
+A：这是预期行为。X Fold5 / X Fold3 / X Fold+ / X Fold 没有独立 V 系列影像芯片，硬件层面没有 MEMC 通路。
+如果你确认自己的机型其实带芯片（例如新机型尚未加入白名单），可在设备上创建 `/data/local/tmp/vivo-xfold-force` 后重试——
+会带警告放行，但后果自负。
+
+**Q：安装时提示「未验证机型，继续安装」？**
+A：X Fold3 Pro（V3）和 X Fold6（V3+）带芯片但本模块未在真机验证，只做了适配推断。装完请自行确认侧栏是否出现「游戏插帧」，
+不生效请附机型与日志提 issue。
+
 **Q：开机会多一次重启，正常吗？**
 A：正常。模块要重启 `vivo-configstore-hal` 和 zygote 才能让属性生效，代价是约 30 秒的额外启动时间。这是刻意的设计：在 `post-fs-data` 阶段挂 `/vendor` 会让 init SIGABRT、卡开机 logo（已实测）。
 
@@ -26,7 +35,7 @@ A：本机型/游戏没有出现入口，模块默认不写这一行。需要实
 A：`pm clear com.vivo.gamecube`，清空游戏魔盒的全部应用数据：导入的插帧配置、魔盒自己的「支持游戏」名单、悬浮窗设置都会回到出厂状态，之后需要重新导入。操作前有二次确认。
 
 **Q：导入的应用数据存在哪里？**
-A：游戏魔盒的 SQLite：`/data/data/com.vivo.gamecube/databases/support_dimension_list.db`，表 `game_dimen`。每次清理前会备份到 `/data/local/tmp/vivo-memc-backup/`。
+A：游戏魔盒的 SQLite：`/data/data/com.vivo.gamecube/databases/support_dimension_list.db`，表 `game_dimen`。每次清理前会备份到 `/data/local/tmp/vivo-xfold-backup/`。
 
 **Q：卸载后游戏魔盒里还留着这些应用吗？**
 A：留着。要清掉用「恢复游戏魔盒初始设置」，或卸载模块后重装游戏魔盒。

@@ -3,7 +3,7 @@
 这是可直接刷入的 KernelSU 模块目录，结构：
 
 ```
-module.prop         模块元信息（id 保持 vivo-game-memc，避免老用户升级断档）
+module.prop         模块元信息（id 保持 vivo-xfold-frame-interpolation，避免老用户升级断档）
 post-fs-data.sh     刻意留空：此阶段挂 /vendor 会导致 init SIGABRT
 service.sh          开机后等 sys.boot_completed → 挂 vivo_config.ini → 重启 HAL/zygote
 bin/vivo-memc.sh    后端脚本（状态/导入/移除/清理/恢复/重启）

@@ -2,7 +2,7 @@
 (function () {
   "use strict";
 
-  const BIN = "/data/adb/modules/vivo-game-memc/bin/vivo-memc.sh";
+  const BIN = "/data/adb/modules/vivo-xfold-frame-interpolation/bin/vivo-memc.sh";
   const $ = (id) => document.getElementById(id);
 
   /* ---------------- KernelSU exec ---------------- */

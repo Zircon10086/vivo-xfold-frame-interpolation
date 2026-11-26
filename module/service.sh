@@ -1,5 +1,5 @@
 #!/system/bin/sh
-# vivo-game-memc（KernelSU 模块）
+# vivo-xfold-frame-interpolation（KernelSU 模块）
 #
 # 只做一件事：开机后把带 [vivo.hardware.game.memc] 的 vivo_config.ini 覆盖到
 # /vendor/etc/vivo_config.ini，再让配置 HAL 与 framework 重新读取。
@@ -10,9 +10,9 @@
 #   因此这里改为「等 sys.boot_completed=1 之后再挂 + 重启 HAL + 重启 zygote」。
 #   zygote 重启发生在开机完成之后，不会阻塞开机；代价是每次开机多一次框架重启。
 #
-# 日志：/data/local/tmp/vivo-game-memc.log
+# 日志：/data/local/tmp/vivo-xfold-fi.log
 MODDIR=${0%/*}
-LOG=/data/local/tmp/vivo-game-memc.log
+LOG=/data/local/tmp/vivo-xfold-fi.log
 SRC_INI="$MODDIR/system/vendor/etc/vivo_config.ini"
 DST_INI=/vendor/etc/vivo_config.ini
 
