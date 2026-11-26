@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<games>
+    <!--配置文件版本号-->
+    <version>1</version>
+<!--    <game pkgName="com.tencent.tmgp.sgame" label="王者荣耀" channel="vivo" index="10" supportSDK="true">-->
+<!--        <optiPowerValues>-->
+<!--            <item gameFps="120" depressValue="60" frameInterValue="120"/>-->
+<!--        </optiPowerValues>-->
+<!--        <frameRateTips>-->
+<!--            <item gameFps="60" tipStringName="super_high_frame_rate" tipString="高帧率"/>-->
+<!--            <item gameFps="90" tipStringName="super_high" tipString="超高"/>-->
+<!--            <item gameFps="120" tipStringName="highest_frame_rate" tipString="极高"/>-->
+<!--        </frameRateTips>-->
+<!--    </game>-->
+<!--    <game pkgName="com.tencent.tmgp.sgamece" label="王者荣耀" channel="#" index="10" supportSDK="true">-->
+<!--        <optiPowerValues>-->
+<!--            <item gameFps="120" depressValue="60" frameInterValue="120"/>-->
+<!--        </optiPowerValues>-->
+<!--        <frameRateTips>-->
+<!--            <item gameFps="60" tipStringName="super_high_frame_rate" tipString="高帧率"/>-->
+<!--            <item gameFps="90" tipStringName="super_high" tipString="超高"/>-->
+<!--            <item gameFps="120" tipStringName="highest_frame_rate" tipString="极高"/>-->
+<!--        </frameRateTips>-->
+<!--    </game>-->
+    <game pkgName="com.netease.hyxd.vivo" label="荒野行动" channel="vivo" index="21" supportSDK="false">
+        <optiPowerValues>
+            <item gameFps="120" depressValue="60" frameInterValue="120"/>
+        </optiPowerValues>
+        <frameRateTips>
+            <item gameFps="60" tipStringName="ji_xian" tipString="极限"/>
+            <item gameFps="120" tipStringName="super_high" tipString="超高"/>
+        </frameRateTips>
+    </game>
+    <game pkgName="com.netease.hyxd" label="荒野行动" channel="#" index="21" supportSDK="false">
+        <optiPowerValues>
+            <item gameFps="120" depressValue="60" frameInterValue="120"/>
+        </optiPowerValues>
+        <frameRateTips>
+            <item gameFps="60" tipStringName="ji_xian" tipString="极限"/>
+            <item gameFps="120" tipStringName="super_high" tipString="超高"/>
+        </frameRateTips>
+    </game>
+    <game pkgName="com.tencent.tmgp.speedmobile" label="QQ飞车" channel="#" index="25" supportSDK="false">
+        <optiPowerValues>
+            <item gameFps="120" depressValue="60" frameInterValue="120"/>
+        </optiPowerValues>
+        <frameRateTips>
+            <item gameFps="60" tipStringName="super_high_frame_rate" tipString="高帧率"/>
+            <item gameFps="90" tipStringName="super_high" tipString="超高"/>
+            <item gameFps="120" tipStringName="highest_frame_rate" tipString="极高"/>
+        </frameRateTips>
+    </game>
+    <game pkgName="com.wmcj.zsyj.vivo" label="战神遗迹" channel="vivo" index="7" supportSDK="true">
+        <optiPowerValues>
+            <item gameFps="120" depressValue="60" frameInterValue="120"/>
+        </optiPowerValues>
+        <frameRateTips>
+            <item gameFps="60" tipStringName="num_60" tipString="60"/>
+            <item gameFps="90" tipStringName="zhen_90" tipString="90帧"/>
+            <item gameFps="120" tipStringName="num_120" tipString="120"/>
+        </frameRateTips>
+    </game>
+    <game pkgName="com.pwrd.zsyj.laohu" label="战神遗迹" channel="#" index="7" supportSDK="true">
+        <optiPowerValues>
+            <item gameFps="120" depressValue="60" frameInterValue="120"/>
+        </optiPowerValues>
+        <frameRateTips>
+            <item gameFps="60" tipStringName="num_60" tipString="60"/>
+            <item gameFps="90" tipStringName="zhen_90" tipString="90帧"/>
+            <item gameFps="120" tipStringName="num_120" tipString="120"/>
+        </frameRateTips>
+    </game>
+<!--    <game pkgName="com.tencent.lolm" label="英雄联盟手游" channel="vivo" index="16" supportSDK="false">-->
+<!--        <boostFrameValues>-->
+<!--            <item gameFps="90" depressValue="60" frameInterValue="120"/>-->
+<!--        </boostFrameValues>-->
+<!--        <frameRateTips>-->
+<!--            <item gameFps="60" tipStringName="num_60" tipString="60"/>-->
+<!--            <item gameFps="90" tipStringName="num_90" tipString="90"/>-->
+<!--            <item gameFps="120" tipStringName="num_120" tipString="120"/>-->
+<!--        </frameRateTips>-->
+<!--    </game>-->
+    <game pkgName="com.miHoYo.bh3.vivo" label="崩坏3" channel="vivo" index="4" supportSDK="false">
+        <boostFrameValues>
+            <item gameFps="90" depressValue="60" frameInterValue="120"/>
+        </boostFrameValues>
+        <frameRateTips>
+            <item gameFps="30" tipStringName="num_30" tipString="30"/>
+            <item gameFps="60" tipStringName="zhen_60" tipString="60帧"/>
+            <item gameFps="90" tipStringName="num_90" tipString="90"/>
+        </frameRateTips>
+    </game>
+    <game pkgName="com.miHoYo.bh3" label="崩坏3" channel="*" index="4" supportSDK="false">
+        <boostFrameValues>
+            <item gameFps="90" depressValue="60" frameInterValue="120"/>
+        </boostFrameValues>
+        <frameRateTips>
+            <item gameFps="30" tipStringName="num_30" tipString="30"/>
+            <item gameFps="60" tipStringName="zhen_60" tipString="60帧"/>
+            <item gameFps="90" tipStringName="num_90" tipString="90"/>
+        </frameRateTips>
+    </game>
+    <game pkgName="com.miHoYo.enterprise.NGHSoD" label="崩坏3" channel="#" index="4" supportSDK="false">
+        <boostFrameValues>
+            <item gameFps="90" depressValue="60" frameInterValue="120"/>
+        </boostFrameValues>
+        <frameRateTips>
+            <item gameFps="30" tipStringName="num_30" tipString="30"/>
+            <item gameFps="60" tipStringName="zhen_60" tipString="60帧"/>
+            <item gameFps="90" tipStringName="num_90" tipString="90"/>
+        </frameRateTips>
+    </game>
+    <game pkgName="com.tencent.tmgp.wuxia" label="天涯明月刀" channel="vivo" index="2" supportSDK="true">
+        <boostFrameValues>
+            <item gameFps="90" depressValue="60" frameInterValue="120"/>
+        </boostFrameValues>
+        <optiPowerValues>
+            <item gameFps="90" depressValue="45" frameInterValue="90"/>
+        </optiPowerValues>
+        <frameRateTips>
+            <item gameFps="60" tipStringName="num_60" tipString="60"/>
+            <item gameFps="90" tipStringName="ultra_high" tipString="非常高"/>
+        </frameRateTips>
+    </game>
+    <game pkgName="com.netease.moba.vivo" label="决战平安京" channel="vivo" index="14" supportSDK="false">
+        <optiPowerValues>
+            <item gameFps="90" depressValue="45" frameInterValue="90"/>
+        </optiPowerValues>
+        <frameRateTips>
+            <item gameFps="60" tipStringName="num_60" tipString="60"/>
+            <item gameFps="90" tipStringName="num_90" tipString="90"/>
+        </frameRateTips>
+    </game>
+    <game pkgName="com.netease.moba" label="决战平安京" channel="*" index="14" supportSDK="false">
+        <optiPowerValues>
+            <item gameFps="90" depressValue="45" frameInterValue="90"/>
+        </optiPowerValues>
+        <frameRateTips>
+            <item gameFps="60" tipStringName="num_60" tipString="60"/>
+            <item gameFps="90" tipStringName="num_90" tipString="90"/>
+        </frameRateTips>
+    </game>
+    <game pkgName="com.hermes.h1game" label="航海王热血航线" channel="#" index="20" supportSDK="false">
+        <optiPowerValues>
+            <item gameFps="60" depressValue="30" frameInterValue="60"/>
+        </optiPowerValues>
+        <frameRateTips>
+            <item gameFps="30" tipStringName="fps_30" tipString="30帧"/>
+            <item gameFps="60" tipStringName="super_high_frame_rate" tipString="高帧率"/>
+        </frameRateTips>
+    </game>
+    <game pkgName="com.hermes.h1game.vivo" label="航海王热血航线" channel="vivo" index="20" supportSDK="false">
+        <optiPowerValues>
+            <item gameFps="60" depressValue="30" frameInterValue="60"/>
+        </optiPowerValues>
+        <frameRateTips>
+            <item gameFps="30" tipStringName="fps_30" tipString="30帧"/>
+            <item gameFps="60" tipStringName="super_high_frame_rate" tipString="高帧率"/>
+        </frameRateTips>
+    </game>
+    <game pkgName="com.netease.pm02.nearme.vivo" label="天谕" channel="vivo" index="6" supportSDK="true">
+        <optiPowerValues>
+            <item gameFps="60" depressValue="30" frameInterValue="60"/>
+        </optiPowerValues>
+        <frameRateTips>
+            <item gameFps="60" tipStringName="ji" tipString="极"/>
+        </frameRateTips>
+    </game>
+    <game pkgName="com.netease.pm02" label="天谕" channel="#" index="6" supportSDK="true">
+        <optiPowerValues>
+            <item gameFps="60" depressValue="30" frameInterValue="60"/>
+        </optiPowerValues>
+        <frameRateTips>
+            <item gameFps="60" tipStringName="ji" tipString="极"/>
+        </frameRateTips>
+    </game>
+    <game pkgName="com.pwrd.hotta.laohu" label="幻塔" channel="#" index="17" supportSDK="false">
+        <boostFrameValues>
+            <item gameFps="60" depressValue="45" frameInterValue="90"/>
+        </boostFrameValues>
+        <optiPowerValues>
+            <item gameFps="60" depressValue="30" frameInterValue="60"/>
+        </optiPowerValues>
+        <frameRateTips>
+            <item gameFps="60" tipStringName="zhen_60" tipString="60帧"/>
+        </frameRateTips>
+    </game>
+    <game pkgName="com.games.hotta.vivo" label="幻塔" channel="vivo" index="17" supportSDK="false">
+        <boostFrameValues>
+            <item gameFps="60" depressValue="45" frameInterValue="90"/>
+        </boostFrameValues>
+        <optiPowerValues>
+            <item gameFps="60" depressValue="30" frameInterValue="60"/>
+        </optiPowerValues>
+        <frameRateTips>
+            <item gameFps="60" tipStringName="zhen_60" tipString="60帧"/>
+        </frameRateTips>
+    </game>
+    <game pkgName="com.netease.g67.vivo" label="暗黑破坏神：不朽" channel="vivo" index="22" supportSDK="false">
+        <optiPowerValues>
+            <item gameFps="60" depressValue="30" frameInterValue="60"/>
+        </optiPowerValues>
+        <frameRateTips>
+            <item gameFps="30" tipStringName="num_30" tipString="30"/>
+            <item gameFps="60" tipStringName="num_60" tipString="60"/>
+        </frameRateTips>
+    </game>
+    <game pkgName="com.netease.g67" label="暗黑破坏神：不朽" channel="#" index="22" supportSDK="false">
+        <optiPowerValues>
+            <item gameFps="60" depressValue="30" frameInterValue="60"/>
+        </optiPowerValues>
+        <frameRateTips>
+            <item gameFps="30" tipStringName="num_30" tipString="30"/>
+            <item gameFps="60" tipStringName="num_60" tipString="60"/>
+        </frameRateTips>
+    </game>
+    <game pkgName="com.tencent.tmaoe" label="重返帝国" channel="vivo" index="24" supportSDK="false">
+        <boostFrameValues>
+            <item gameFps="60" depressValue="45" frameInterValue="90"/>
+        </boostFrameValues>
+        <optiPowerValues>
+            <item gameFps="60" depressValue="30" frameInterValue="60"/>
+        </optiPowerValues>
+        <frameRateTips>
+            <item gameFps="60" tipStringName="num_60" tipString="60"/>
+        </frameRateTips>
+    </game>
+    <game pkgName="com.tencent.mf.uam" label="暗区突围" channel="vivo" index="23" supportSDK="false">
+        <optiPowerValues>
+            <item gameFps="60" depressValue="30" frameInterValue="60"/>
+        </optiPowerValues>
+        <frameRateTips>
+            <item gameFps="60" tipStringName="ji_xian" tipString="极限"/>
+        </frameRateTips>
+    </game>
+    <game pkgName="com.netease.dwrg5.vivo" label="第五人格" channel="vivo" index="8" supportSDK="true">
+        <optiPowerValues>
+            <item gameFps="60" depressValue="30" frameInterValue="60"/>
+        </optiPowerValues>
+        <frameRateTips>
+            <item gameFps="60" tipStringName="high_fps_mode" tipString="高帧率模式"/>
+        </frameRateTips>
+    </game>
+    <game pkgName="com.netease.dwrg" label="第五人格" channel="#" index="8" supportSDK="true">
+        <optiPowerValues>
+            <item gameFps="60" depressValue="30" frameInterValue="60"/>
+        </optiPowerValues>
+        <frameRateTips>
+            <item gameFps="60" tipStringName="high_fps_mode" tipString="高帧率模式"/>
+        </frameRateTips>
+    </game>
+    <game pkgName="com.netease.dwrg.m4399" label="第五人格" channel="#" index="8" supportSDK="true">
+        <optiPowerValues>
+            <item gameFps="60" depressValue="30" frameInterValue="60"/>
+        </optiPowerValues>
+        <frameRateTips>
+            <item gameFps="60" tipStringName="high_fps_mode" tipString="高帧率模式"/>
+        </frameRateTips>
+    </game>
+    <game pkgName="com.netease.onmyoji.vivo" label="阴阳师" channel="vivo" index="12" supportSDK="false">
+        <optiPowerValues>
+            <item gameFps="60" depressValue="30" frameInterValue="60"/>
+        </optiPowerValues>
+        <frameRateTips>
+            <item gameFps="60" tipStringName="high_fps_mode" tipString="高帧率模式"/>
+        </frameRateTips>
+    </game>
+    <game pkgName="com.netease.onmyoji" label="阴阳师" channel="#" index="12" supportSDK="false">
+        <optiPowerValues>
+            <item gameFps="60" depressValue="30" frameInterValue="60"/>
+        </optiPowerValues>
+        <frameRateTips>
+            <item gameFps="60" tipStringName="high_fps_mode" tipString="高帧率模式"/>
+        </frameRateTips>
+    </game>
+    <game pkgName="com.netease.sky.vivo" label="光遇" channel="vivo" index="11" supportSDK="false">
+        <optiPowerValues>
+            <item gameFps="60" depressValue="30" frameInterValue="60"/>
+        </optiPowerValues>
+        <frameRateTips>
+            <item gameFps="60" tipStringName="ji_zhi_liu_chang" tipString="极致流畅"/>
+        </frameRateTips>
+    </game>
+    <game pkgName="com.netease.sky" label="光遇" channel="#" index="11" supportSDK="false">
+        <optiPowerValues>
+            <item gameFps="60" depressValue="30" frameInterValue="60"/>
+        </optiPowerValues>
+        <frameRateTips>
+            <item gameFps="60" tipStringName="ji_zhi_liu_chang" tipString="极致流畅"/>
+        </frameRateTips>
+    </game>
+    <game pkgName="com.netease.mrzh" label="明日之后" channel="#" index="19" supportSDK="false">
+        <optiPowerValues>
+            <item gameFps="60" depressValue="30" frameInterValue="60"/>
+        </optiPowerValues>
+        <frameRateTips>
+            <item gameFps="60" tipStringName="high_frame_rate" tipString="高"/>
+        </frameRateTips>
+    </game>
+    <game pkgName="com.netease.mrzh.vivo" label="明日之后" channel="vivo" index="19" supportSDK="false">
+        <optiPowerValues>
+            <item gameFps="60" depressValue="30" frameInterValue="60"/>
+        </optiPowerValues>
+        <frameRateTips>
+            <item gameFps="60" tipStringName="high_frame_rate" tipString="高"/>
+        </frameRateTips>
+    </game>
+    <game pkgName="com.tencent.jkchess" label="金铲铲之战" channel="vivo" index="26" supportSDK="false" frameInterValue="60">
+        <optiPowerValues>
+            <item gameFps="60" depressValue="30" frameInterValue="60"/>
+        </optiPowerValues>
+        <frameRateTips>
+            <item gameFps="60" tipStringName="num_60" tipString="60"/>
+        </frameRateTips>
+    </game>
+    <game pkgName="com.tencent.tmgp.djsy" label="妄想山海" channel="vivo" index="15" supportSDK="false">
+        <boostFrameValues>
+            <item gameFps="60" depressValue="45" frameInterValue="90"/>
+        </boostFrameValues>
+        <optiPowerValues>
+            <item gameFps="60" depressValue="30" frameInterValue="60"/>
+        </optiPowerValues>
+        <frameRateTips>
+            <item gameFps="60" tipStringName="highest_frame_rate" tipString="极高"/>
+        </frameRateTips>
+    </game>
+    <game pkgName="com.netease.aceracer" label="王牌竞速" channel="#" index="18" supportSDK="false">
+        <optiPowerValues>
+            <item gameFps="60" depressValue="30" frameInterValue="60"/>
+        </optiPowerValues>
+        <frameRateTips>
+            <item gameFps="60" tipStringName="high_frame_rate" tipString="高"/>
+        </frameRateTips>
+    </game>
+    <game pkgName="com.netease.aceracer.vivo" label="王牌竞速" channel="vivo" index="18" supportSDK="false">
+        <optiPowerValues>
+            <item gameFps="60" depressValue="30" frameInterValue="60"/>
+        </optiPowerValues>
+        <frameRateTips>
+            <item gameFps="60" tipStringName="high_frame_rate" tipString="高"/>
+        </frameRateTips>
+    </game>
+    <game pkgName="com.tencent.wmsj" label="完美世界" channel="vivo" index="1" supportSDK="false">
+        <optiPowerValues>
+            <item gameFps="60" depressValue="30" frameInterValue="60"/>
+        </optiPowerValues>
+        <frameRateTips>
+            <item gameFps="60" tipStringName="zhen_60" tipString="60帧"/>
+        </frameRateTips>
+    </game>
+    <game pkgName="com.miHoYo.Nap" label="绝区零" channel="#" index="10" supportSDK="false">
+        <optiPowerValues>
+            <item gameFps="60" depressValue="30" frameInterValue="60"/>
+        </optiPowerValues>
+        <boostFrameValues>
+            <item gameFps="60" depressValue="60" frameInterValue="120"/>
+        </boostFrameValues>
+        <frameRateTips>
+            <item gameFps="60" tipStringName="num_60" tipString="60"/>
+            <item gameFps="120" tipStringName="num_120" tipString="120"/>
+        </frameRateTips>
+    </game>
+</games>

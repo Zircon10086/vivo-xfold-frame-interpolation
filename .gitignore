@@ -1,0 +1,29 @@
+# 构建产物（保留 dist 目录说明，但忽略 zip）
+dist/*.zip
+
+# 系统与编辑器
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# 逆向/厂商产物（绝不入库）
+vendor/
+apks/
+decompiled/
+smali/
+fw/
+tools/
+reports/*.tsv
+reports/*.log
+
+# 本地临时
+*.bak
+*.tmp
+*.log
+
+# 遗留实验的构建产物
+legacy/**/build/
+legacy/**/*.apk
+legacy/**/*.idsig
+legacy/**/*.keystore

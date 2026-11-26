@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>插帧管理器</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="bar">
+  <div class="bar-main">
+    <div class="title">插帧管理器</div>
+    <div class="sub" id="subLine">vivo X Fold2 · 正在读取…</div>
+  </div>
+  <div id="capBadge" class="badge badge-unknown">检测中</div>
+</header>
+
+<main>
+  <section class="card status-card">
+    <div class="grid">
+      <div class="kv"><span>能力</span><b id="stMemc">-</b></div>
+      <div class="kv"><span>声明</span><b id="stIni">-</b></div>
+      <div class="kv"><span>请求值</span><b id="stReq">-</b></div>
+      <div class="kv"><span>生效值</span><b id="stEff">-</b></div>
+    </div>
+    <div class="row gap">
+      <button class="btn btn-sm" id="btnRestartGc">重启游戏助手</button>
+      <button class="btn btn-sm" id="btnReapply">重新应用能力</button>
+      <button class="btn btn-sm" id="btnRefresh">刷新</button>
+    </div>
+  </section>
+
+  <section class="card import-card" id="importCard">
+    <div class="import-main">
+      <div class="import-title">导入应用</div>
+      <div class="import-sub">从已安装应用里挑，系统应用可在面板里打开</div>
+    </div>
+    <div class="import-arrow">＋</div>
+  </section>
+
+  <section class="card">
+    <div class="card-title">管理当前应用 <span id="gameCount" class="count">0</span></div>
+    <div id="gameList" class="list"><div class="empty">加载中…</div></div>
+    <p class="hint">插帧档位在游戏内切换：侧栏 →「游戏工具」→「游戏插帧」→ 关闭 / 提升帧率 / 优化功耗。</p>
+  </section>
+
+  <section class="card">
+    <div class="card-title">说明</div>
+    <ul class="notes">
+      <li><b>三个档位</b>：游戏内「游戏插帧」面板会同时给出 原始帧率（关闭）/ 提升帧率（60→120）/ 优化功耗（30→60），由你在游戏里选，模块只负责把对应的能力行写全。</li>
+      <li><b>视效增强</b>对所有加入游戏魔盒的应用都生效，属于全局行为，这里不再单独提供开关。</li>
+      <li>系统应用大多没有悬浮窗权限，导入后不会出现游戏助手悬浮层，属正常现象。</li>
+    </ul>
+    <button class="btn btn-sm btn-danger-ghost" id="btnResetGc">恢复游戏魔盒初始设置</button>
+  </section>
+</main>
+
+<div id="job" class="job hidden"><span class="spinner"></span><span id="jobText">执行中…</span></div>
+
+<section id="importSheet" class="sheet hidden">
+  <header class="sheet-bar">
+    <button class="btn btn-sm" id="sheetClose">关闭</button>
+    <div class="sheet-title">导入应用</div>
+    <span class="sheet-count" id="sheetCount"></span>
+  </header>
+  <div class="sheet-search">
+    <input id="search" class="input" type="search" placeholder="搜索应用名或包名">
+    <label class="toggle-row"><input type="checkbox" id="showSystem"> 显示系统应用</label>
+  </div>
+  <div id="candidateList" class="list sheet-list"><div class="empty">加载中…</div></div>
+</section>
+
+<div id="toast" class="toast"></div>
+
+<div id="mask" class="mask hidden">
+  <div class="dialog">
+    <div class="dialog-title" id="dlgTitle">确认</div>
+    <div class="dialog-body" id="dlgBody"></div>
+    <div class="row end gap">
+      <button class="btn" id="dlgCancel">取消</button>
+      <button class="btn btn-danger" id="dlgOk">确定</button>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
