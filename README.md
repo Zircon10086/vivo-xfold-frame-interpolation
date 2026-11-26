@@ -1,5 +1,9 @@
 # vivo-xfold-frame-interpolation
 
+[![Release](https://img.shields.io/github/v/release/Zircon10086/vivo-xfold-frame-interpolation?label=release)](https://github.com/Zircon10086/vivo-xfold-frame-interpolation/releases)
+[![License](https://img.shields.io/github/license/Zircon10086/vivo-xfold-frame-interpolation?label=license)](LICENSE)
+[![Build](https://github.com/Zircon10086/vivo-xfold-frame-interpolation/actions/workflows/release.yml/badge.svg)](https://github.com/Zircon10086/vivo-xfold-frame-interpolation/actions/workflows/release.yml)
+
 **给 vivo X Fold 系列补上游戏帧率插值（MEMC）能力的 KernelSU 模块。**
 
 vivo 的 X Fold 折叠屏机型在系统里保留了显示芯片的插帧（MEMC）能力，但游戏魔盒的启用名单被裁剪，普通用户无法为任意应用打开插帧。
