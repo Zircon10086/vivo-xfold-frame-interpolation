@@ -56,7 +56,7 @@ KernelSU 模块（开机后，等 sys.boot_completed + 15s）
 
 安装：
 
-1. 下载 `dist/vivo-game-memc-v1.6.0.zip`（或用 `scripts/build-module.sh` 自行打包）
+1. 从 Releases 下载 `vivo-game-memc-vX.Y.Z.zip`，或本地运行 `scripts/build-module.sh` 自行打包（产物在 `dist/`）
 2. KernelSU 管理器 → 模块 → 从本地安装 → 选择 zip
 3. 重启手机。**开机会多一次 zygote 重启，约 30 秒**，属正常现象
 4. 进入 KernelSU 模块列表，点本模块卡片左下角的按钮打开 WebUI
