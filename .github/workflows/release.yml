@@ -11,30 +11,18 @@ permissions:
   contents: write
 
 jobs:
-  build:
+  release:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.x'
-
       - name: 安装检测逻辑自测
         run: bash scripts/test-customize.sh
 
-      - name: 打包模块
-        run: bash scripts/build-module.sh
-
-      - name: 上传构建产物
-        uses: actions/upload-artifact@v4
+      # tag 推送 -> 校验并发布 immutable release；PR / 手动触发 -> 只做 dry-run 校验
+      - name: 校验并发布模块
+        uses: KernelSU-Modules/tools/actions/module-release@424471eacf6c0bd00e8e3708980f6b1882b5bf33
         with:
-          name: module-zip
-          path: dist/*.zip
-
-      - name: 发布到 Release
-        if: startsWith(github.ref, 'refs/tags/v')
-        uses: softprops/action-gh-release@v2
-        with:
-          files: dist/*.zip
-          generate_release_notes: true
+          module-dir: module
+          release-notes-file: CHANGELOG.md
+          dry-run: ${{ github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v') && 'false' || 'true' }}

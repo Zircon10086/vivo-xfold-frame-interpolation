@@ -1,6 +1,6 @@
 id=vivo-xfold-frame-interpolation
 name=vivo X Fold 插帧解锁
-version=v1.7.1
-versionCode=9
+version=v1.7.2
+versionCode=10
 author=ZiRCON
 description=为vivo X Fold 2解锁游戏插帧功能，不支持其他设备。X Fold 3 Pro/6可能兼容，尚未验证。

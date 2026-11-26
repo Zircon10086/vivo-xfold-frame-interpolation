@@ -1,5 +1,11 @@
 # 更新日志
 
+## v1.7.2
+
+- 适配 KernelSU Modules 收录要求：新增 `module.yaml`、商店图标 `assets/icon.png`、商店描述 `docs/store/description.md`
+- 发布流程改用 `KernelSU-Modules/tools/actions/module-release`：发布前用官方校验器检查 ZIP，产物按 `{id}-{versionCode}-{version}.zip` 命名
+- 仓库启用 release 不可变性（immutable release），之后每个版本都以不可变 release 发布
+
 ## v1.7.1
 
 - 机型检测改用官方设备型号（V 编号）优先：`V2266A` / `V2337A` / `V2545A` 允许，`V2436A` / `V2303A` / `V2229A` / `V2178A` 拒绝
